@@ -1,0 +1,60 @@
+{
+  "header": [
+    {
+      "domNode": "h1",
+      "text": "Page Title",
+      "cssClasses": "page-title"
+    },
+    {
+      "domNode": "nav",
+      "children": [
+        {
+          "domNode": "a",
+          "text": "Nav Link 1",
+          "attrs": {
+            "href": "/"
+          }
+        },
+        {
+          "domNode": "a",
+          "text": "Nav Link 2",
+          "attrs": {
+            "href": "/"
+          }
+        }
+      ]
+    }    
+  ],
+  "body": [
+    {
+      "domNode": "label",
+      "text": "First Name",
+      "children": [
+        {
+          "domNode": "input",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "domNode": "label",
+      "text": "Last Name",
+      "children": [
+        {
+          "domNode": "input",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "domNode": "label",
+      "text": "Email Address",
+      "children": [
+        {
+          "domNode": "input",
+          "type": "email"
+        }
+      ]
+    }
+  ]
+}

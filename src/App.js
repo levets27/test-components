@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import PageData from "./pageData";
+import PageElement from "./PageElement";
+import "./App.css";
 
 function App() {
+  const headerElements = PageData["header"];
+  const bodyElements = PageData["body"];
+  console.log(headerElements, bodyElements);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        {headerElements &&
+          headerElements.map((el, i) => (
+            <PageElement data={el} key={i}>
+              {el.children
+                ? el.children.map((child, j) => (
+                    <PageElement data={child} key={j}>
+                      {child.text}
+                    </PageElement>
+                  ))
+                : el.text}
+            </PageElement>
+          ))}
       </header>
+      <div className="body-content">
+        {bodyElements &&
+          bodyElements.map((el, i) => (
+            <PageElement data={el} key={i}>
+              {el.children
+                ? el.children.map((child, j) => (
+                    <PageElement data={child} key={j}>
+                      {child.text}
+                    </PageElement>
+                  ))
+                : el.text}
+            </PageElement>
+          ))}
+      </div>
     </div>
   );
 }
